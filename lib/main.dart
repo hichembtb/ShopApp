@@ -17,7 +17,7 @@ class StoreApp extends StatelessWidget {
       initialRoute: HomePage.route,
       routes: {
         HomePage.route: (context) => const HomePage(),
-        UpdateProductScreen.route: (context) => const UpdateProductScreen()
+        UpdateProductScreen.route: (context) => UpdateProductScreen()
       },
     );
   }

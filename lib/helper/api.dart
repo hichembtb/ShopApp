@@ -57,11 +57,13 @@ class Api {
         'Authorization': 'Bearer $token',
       });
     }
+    print('url = $url ,,, body = $body ,,, ');
     http.Response response =
         await http.post(Uri.parse(url), body: body, headers: headers);
 
     if (response.statusCode == 200) {
       Map<String, dynamic> data = jsonDecode(response.body);
+      print(data);
       return data;
     } else {
       throw Exception(
