@@ -17,15 +17,16 @@ class ProductModel {
   });
   factory ProductModel.fromJson(jsonData) {
     return ProductModel(
-        id: jsonData['id'],
-        title: jsonData['title'],
-        price: jsonData['price'],
-        description: jsonData['description'],
-        category: jsonData['category'],
-        image: jsonData['image'],
-        rating: jsonData['rating'] == null
-            ? null
-            : RatingModel.fromJson(jsonData['rating']));
+      id: jsonData['id'],
+      title: jsonData['title'],
+      price: jsonData['price'],
+      description: jsonData['description'],
+      category: jsonData['category'],
+      image: jsonData['image'],
+      rating: jsonData['rating'] == null
+          ? null
+          : RatingModel.fromJson(jsonData['rating']),
+    );
   }
 }
 

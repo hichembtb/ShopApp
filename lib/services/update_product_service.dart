@@ -3,7 +3,7 @@ import '../models/product_model.dart';
 
 class UpdateProductService {
   Future<ProductModel> updateProduct({
-    required dynamic id,
+    required int id,
     required String title,
     required String price,
     required String desc,
@@ -11,14 +11,17 @@ class UpdateProductService {
     required String category,
   }) async {
     print(id);
-    Map<String, dynamic> data =
-        await Api().put(url: "https://fakestoreapi.com/products/$id", body: {
-      'title': title,
-      'price': price,
-      'description': desc,
-      'image': image,
-      'category': category,
-    });
+    Map<String, dynamic> data = await Api().put(
+      url: "https://fakestoreapi.com/products/$id",
+      body: {
+        'title': title,
+        'price': price,
+        'description': desc,
+        'image': image,
+        'category': category,
+      },
+    );
+
     return ProductModel.fromJson(data);
   }
 }
